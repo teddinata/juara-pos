@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script src="{{ asset('/admin/js/coreui.bundle.min.js') }}" defer></script>
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    @vite('resources/js/app.js')
   </head>
   <body>
       @inertia
