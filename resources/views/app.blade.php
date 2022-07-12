@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -17,6 +17,36 @@
       @inertia
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+     {{-- custom css bootstrap --}}
+     <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+     <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+     <!-- Fonts -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    {{-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+    <script src="{{ mix('/js/app.js') }}" defer></script> --}}
+     <!-- Bootstrap core JavaScript-->
+     <script src="{{ asset('/admin/vendor/jquery/jquery.min.js') }}"></script>
+     <script src="{{ asset('/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+     <!-- Core plugin JavaScript-->
+     <script src="{{ asset('/admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+     <!-- Custom scripts for all pages-->
+     <script src="{{ asset('/admin/js/sb-admin-2.min.js') }}"></script>
+    {{-- @inertiaHead --}}
+    @vite('resources/js/app.js')
+  </head>
+  <body class="bg-gradient-primary" >
+    @inertia
   </body>
 </html>
 
