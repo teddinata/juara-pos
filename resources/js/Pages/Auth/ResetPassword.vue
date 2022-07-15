@@ -16,7 +16,12 @@
                             {{ session.status }}
                         </div>
                         <form @submit.prevent="submit">
-                            <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
                                 <input type="email" class="form-control form-control-user"
                                     v-model="form.email" :class="{'is-invalid': errors.email}"
                                     id="email" aria-describedby="email"
@@ -25,7 +30,12 @@
                             <div v-if="errors.email" class="alert alert-danger">
                                 {{ errors.email }}
                             </div>
-                            <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
                                 <input type="password" class="form-control form-control-user"
                                     v-model="form.password" :class="{'is-invalid': errors.password}"
                                     id="exampleInputPassword" placeholder="Password">
@@ -33,10 +43,13 @@
                             <div v-if="errors.password" class="alert alert-danger">
                                 {{ errors.password }}
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control form-control-user"
-                                    v-model="form.password_confirmation" :class="{'is-invalid': errors.password_confirmation}"
-                                    id="exampleInputPassword" placeholder="Password">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control" v-model="form.password_confirmation" :class="{ 'is-invalid': errors.password_confirmation }" type="password" placeholder="Password Confirmation">
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox small">

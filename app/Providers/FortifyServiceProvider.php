@@ -63,5 +63,8 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetPasswordView(function () {
             return Inertia::render('Auth/ResetPassword');
         });
+
+        // logout
+        $this->app->singleton(\Laravel\Fortify\Contracts\LogoutResponse::class, \App\Http\Responses\LogoutResponse::class);
     }
 }
