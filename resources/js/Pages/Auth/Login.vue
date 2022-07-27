@@ -4,7 +4,7 @@
         <title>Login Account - Aplikasi Kasir</title>
     </Head>
      <!-- Nested Row within Card Body -->
-     <!-- <div class="card o-hidden border-0 shadow-lg my-5"> -->
+     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card">
             <div class="card-body">
                 <div class="text-center pt-3">
@@ -63,7 +63,7 @@
 
             </div>
         </div>
-    <!-- </div> -->
+    </div>
 </template>
 
 <script>
