@@ -105,7 +105,7 @@
                         //show success alert
                         Swal.fire({
                             title: 'Success!',
-                            text: 'Role saved successfully.',
+                            text: 'Data Role berhasil ditambahkan.',
                             icon: 'success',
                             showConfirmButton: false,
                             timer: 2000

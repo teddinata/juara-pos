@@ -104,7 +104,7 @@
                         //show success alert
                         Swal.fire({
                             title: 'Success!',
-                            text: 'Role updated successfully.',
+                            text: 'Role berhasil diperbarui.',
                             icon: 'success',
                             showConfirmButton: false,
                             timer: 2000

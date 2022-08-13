@@ -104,20 +104,20 @@
 
             const destroy = (id) => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Apakah kamu yakin?',
+                    text: "Anda tidak dapat mengembalikan data yang sudah dihapus!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Ya, hapus!',
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Inertia.delete(`/apps/roles/${id}`);
 
                         Swal.fire({
-                            title: 'Deleted!',
-                            text: 'Role deleted successfully.',
+                            title: 'Terhapus!',
+                            text: 'Data berhasil dihapus.',
                             icon: 'success',
                             timer: 2000,
                             showConfirmButton: false,
