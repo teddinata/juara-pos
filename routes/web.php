@@ -22,8 +22,17 @@ Route::group(['prefix' => 'apps'], function () {
     // middleware auth
     Route::group(['middleware' => 'auth'], function () {
         // dashboard
-        Route::get('dashboard', App\Http\Controllers\Apps\DashboardController::class)
+        Route::get('dashboard', \App\Http\Controllers\Apps\DashboardController::class)
             ->name('apps.dashboard');
+
+        // get permissions
+        Route::get('permissions', \App\Http\Controllers\Apps\PermissionController::class)
+            ->name('apps.permissions.index')
+            ->middleware('permission:permissions.index');
+
+        // route roles
+        Route::resource('/roles', \App\Http\Controllers\Apps\RoleController::class, ['as' => 'apps'])
+            ->middleware('permission:roles.index|roles.create|roles.edit|roles.delete');
     });
 });
 
