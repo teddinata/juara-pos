@@ -14,7 +14,7 @@
         <!-- end content -->
 
         <footer class="c-footer">
-          <div><strong>APLIKASI KASIR</strong> &copy; 2022 - SantriKoding.com.</div>
+          <div><strong>JUARA POS</strong> &copy; 2022 - creazylab.id</div>
         </footer>
       </div>
     </div>

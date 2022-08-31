@@ -1,7 +1,7 @@
 <template>
      <div class="c-sidebar c-sidebar-dark c-sidebar-fixed" :class="{ 'c-sidebar-lg-show': !$page.url.startsWith('/apps/transactions') }" id="sidebar">
       <div class="c-sidebar-brand d-lg-down-none" style="background: #c43333;">
-        <img src="/images/cash-machine.png" class="bg-light rounded shadow-sm p-1" width="35"> <span class="ml-2 font-weight-bold">APLIKASI KASIR</span>
+        <img src="/images/cash-machine.png" class="bg-light rounded shadow-sm p-1" width="35"> <span class="ml-2 font-weight-bold">JUARA POS</span>
       </div>
 
       <ul class="c-sidebar-nav">
