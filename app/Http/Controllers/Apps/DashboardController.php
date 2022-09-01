@@ -68,7 +68,7 @@ class DashboardController extends Controller
         if(count($chart_best_product)) {
             foreach ($chart_best_product as $data) {
                 $product[] = $data->title;
-                $total[] = (int)$data->qty;
+                // $total[] = (int)$data->qty;
             }
         } else {
             $product[] = "";
@@ -83,7 +83,7 @@ class DashboardController extends Controller
             'sales_date' => $sales_date,
             'grand_total' => $grand_total,
             'product' => $product,
-            'total' => $total,
+            // 'total' => $total,
         ]);
 
     }
