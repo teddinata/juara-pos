@@ -12,6 +12,9 @@
                                 <span class="font-weight-bold"><i class="fa fa-chart-bar"></i> SALES CHART 7 DAYS</span>
                             </div>
                             <div class="card-body">
+                                <!-- <div class="chart-area">
+                                    <BarChart :chartData="chartSellWeek" :options="options" id="myAreaChart"/>
+                                </div> -->
                                 <BarChart :chartData="chartSellWeek" :options="options"/>
                             </div>
                         </div>
@@ -42,7 +45,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-4">
                         <div v-if="hasAnyPermission(['dashboard.best_selling_product'])" class="card border-0 rounded-3 shadow border-top-warning">
                             <div class="card-header">
                                 <span class="font-weight-bold"><i class="fa fa-chart-pie"></i> BEST SELIING PRODUCT</span>
@@ -52,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-4">
                         <div v-if="hasAnyPermission(['dashboard.product_stock'])" class="card border-0 rounded-3 shadow border-top-danger">
                             <div class="card-header">
                                 <span class="font-weight-bold"><i class="fa fa-box-open"></i> PRODUCT STOCK</span>
