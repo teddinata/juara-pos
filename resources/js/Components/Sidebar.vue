@@ -1,5 +1,5 @@
 <template>
-     <div class="c-sidebar c-sidebar-dark c-sidebar-fixed" :class="{ 'c-sidebar-lg-show': !$page.url.startsWith('/apps/transactions') }" id="sidebar">
+     <!-- <div class="c-sidebar c-sidebar-dark c-sidebar-fixed" :class="{ 'c-sidebar-lg-show': !$page.url.startsWith('/apps/transactions') }" id="sidebar">
       <div class="c-sidebar-brand d-lg-down-none" style="background: #c43333;">
         <img src="/images/cash-machine.png" class="bg-light rounded shadow-sm p-1" width="35"> <span class="ml-2 font-weight-bold">JUARA POS</span>
       </div>
@@ -7,7 +7,7 @@
       <ul class="c-sidebar-nav">
 
         <li class="c-sidebar-nav-item">
-            <Link class="c-sidebar-nav-link" v-if="hasAnyPermission(['dashboard.index'])" :class="{ 'active': $page.url.startsWith('/apps/dashboard') }" href="/apps/dashboard">
+            <Link class="nav-link collapsed" v-if="hasAnyPermission(['dashboard.index'])" :class="{ 'active': $page.url.startsWith('/apps/dashboard') }" href="/apps/dashboard">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z" />
                 <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
@@ -109,13 +109,131 @@
 
         <li class="c-sidebar-nav-divider"></li>
     </ul>
+    </div> -->
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" v-show='isOpen'>
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="/images/cash-machine.png" class="bg-light rounded shadow-sm p-1" width="35"> <span class="ml-2 font-weight-bold">JUARA POS</span>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <Link class="nav-link collapsed" v-if="hasAnyPermission(['dashboard.index'])" :class="{ 'active': $page.url.startsWith('/apps/dashboard') }" href="/apps/dashboard">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </Link>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading" v-if="hasAnyPermission(['categories.index']) || hasAnyPermission(['products.index'])">
+        MASTER
     </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" v-if="hasAnyPermission(['categories.index'])">
+        <Link class="nav-link collapsed" href="/apps/categories" :class="{ 'active': $page.url.startsWith('/apps/categories') }">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <span>Categories</span>
+        </Link>
+    </li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['products.index'])">
+        <Link class="nav-link collapsed" href="/apps/products" :class="{ 'active': $page.url.startsWith('/apps/products') }">
+        <!-- fontawesome product -->
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        <span class="ms-2">Products</span>
+        </Link>
+    </li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['customers.index'])">
+        <Link class="nav-link collapsed" href="/apps/customers" :class="{ 'active': $page.url.startsWith('/apps/customers') }">
+            <i class="fa fa-users" aria-hidden="true"></i>
+        <span class="ms-2">Customers</span>
+        </Link>
+    </li>
+
+    <li class="sidebar-heading" v-if="hasAnyPermission(['transactions.index'])">TRANSACTIONS</li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['transactions.index'])">
+        <Link class="nav-link collapsed" href="/apps/transactions" :class="{ 'active': $page.url.startsWith('/apps/transactions') }">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <span class="ms-2">Transactions</span>
+        </Link>
+    </li>
+
+    <li class="sidebar-heading" v-if="hasAnyPermission(['sales.index']) || hasAnyPermission(['profits.index'])">REPORTS</li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['sales.index'])">
+        <Link class="nav-link collapsed" href="/apps/sales" :class="{ 'active': $page.url.startsWith('/apps/sales') }">
+            <i class="fa fa-balance-scale" aria-hidden="true"></i>
+            <span class="ms-2">Report Sales</span>
+        </Link>
+    </li>
+    <li class="nav-item" v-if="hasAnyPermission(['profits.index'])">
+        <Link class="nav-link collapsed" href="/apps/profits" :class="{ 'active': $page.url.startsWith('/apps/profits') }">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <span class="ms-2">Report Profits</span>
+        </Link>
+    </li>
+
+    <li class="sidebar-heading" v-if="hasAnyPermission(['roles.index']) || hasAnyPermission(['permissions.index']) || hasAnyPermission(['users.index'])">USER MANAGEMENT</li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['roles.index'])">
+        <Link class="nav-link collapsed" href="/apps/roles" :class="{ 'active': $page.url.startsWith('/apps/roles') }">
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+        <span class="ms-2">Roles</span>
+        </Link>
+    </li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['permissions.index'])">
+        <Link class="nav-link collapsed" href="/apps/permissions" :class="{ 'active': $page.url.startsWith('/apps/permissions') }">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+        <span class="ms-2">Permissions</span>
+        </Link>
+    </li>
+
+    <li class="nav-item" v-if="hasAnyPermission(['users.index'])">
+        <Link class="nav-link collapsed" href="/apps/users" :class="{ 'active': $page.url.startsWith('/apps/users') }">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+        <span class="ms-2">Users</span>
+        </Link>
+    </li>
+
+     <!-- Sidebar Toggler (Sidebar) -->
+     <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle" @click='sidebarToggle'></button>
+    </div>
+
+</ul>
+<!-- End of Sidebar -->
 </template>
 
 <script>
     // import link from vue
     import {Link} from '@inertiajs/inertia-vue3';
     export default {
+        data() {
+            return{
+                // true or false is open
+                isOpen: true // default open sidebar
+            }
+        },
+        methods: {
+            sidebarToggle(){
+                // minimize toggle size
+
+                console.log("================"+this.isOpen)
+                this.isOpen = !this.isOpen;
+            }
+        },
 
         components: {
             Link
