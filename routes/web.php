@@ -45,6 +45,10 @@ Route::group(['prefix' => 'apps'], function () {
         // route products
         Route::resource('/products', \App\Http\Controllers\Apps\ProductController::class, ['as' => 'apps'])
             ->middleware('permission:products.index|products.create|products.edit|products.delete');
+
+        // route customers
+        Route::resource('/customers', \App\Http\Controllers\Apps\CustomerController::class, ['as' => 'apps'])
+            ->middleware('permission:customers.index|customers.create|customers.edit|customers.delete');
     });
 });
 
