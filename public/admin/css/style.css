@@ -7192,7 +7192,7 @@ html:not([dir="rtl"]) .c-header-brand.c-header-brand-center {
 
 @media (max-width: 575.98px) {
   .c-header-brand.c-header-brand-xs-down-center {
-    position: absolute;
+    position: relative;
     top: 56px;
     -webkit-transform: translate(-50%, -100%);
     transform: translate(-50%, -100%);
@@ -7206,7 +7206,7 @@ html:not([dir="rtl"]) .c-header-brand.c-header-brand-center {
 }
 
 .c-header-brand.c-header-brand-xs-up-center {
-  position: absolute;
+  position: relative;
   top: 56px;
   -webkit-transform: translate(-50%, -100%);
   transform: translate(-50%, -100%);
