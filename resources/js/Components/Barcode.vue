@@ -2,7 +2,7 @@
     //importing hyperscript from vue to create the HTML element
     import { h } from "vue";
     //importing jsbarcode method from jsbarcode library
-    var JsBarcode = "jsbarcode";
+    import JsBarcode from 'jsbarcode';
     export default {
       name: "Barcode",
       // defining props and props type to be used in Barcode component

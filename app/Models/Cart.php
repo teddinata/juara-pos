@@ -13,7 +13,7 @@ class Cart extends Model
         'cashier_id',
         'product_id',
         'qty',
-        'subtotal',
+        'price',
     ];
 
     /**

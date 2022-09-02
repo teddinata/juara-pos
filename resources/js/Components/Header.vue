@@ -37,9 +37,6 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
-    <button v-show="isOpen" id="sidebarToggle" @click="sidebarToggle" class="btn btn-link  rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-    </button>
 
     <!-- Topbar Search -->
     <form
@@ -243,16 +240,16 @@
     import { Link } from '@inertiajs/inertia-vue3';
 
     export default {
-        data(){
-            return {
-                isOpen: true
-            }
-        },
-        methods: {
-            sidebarToggle(){
-                this.isOpen = !this.isOpen;
-            }
-        },
+        // data(){
+        //     return {
+        //         // isOpen: true
+        //     }
+        // },
+        // methods: {
+        //     sidebarToggle(){
+        //         this.isOpen = !this.isOpen;
+        //     }
+        // },
         components: {
             Link
         },

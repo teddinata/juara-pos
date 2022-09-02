@@ -67,6 +67,7 @@ Route::group(['prefix' => 'apps'], function () {
 
         //route transaction print
         Route::get('/transactions/print', [\App\Http\Controllers\Apps\TransactionController::class, 'print'])->name('apps.transactions.print');
+
         //route sales index
         Route::get('/sales', [\App\Http\Controllers\Apps\SaleController::class, 'index'])->middleware('permission:sales.index')->name('apps.sales.index');
 
