@@ -39,8 +39,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <button class="btn btn-primary shadow-sm rounded-sm" type="submit">SAVE</button>
-                                            <button class="btn btn-warning shadow-sm rounded-sm ms-3" type="reset">RESET</button>
+                                            <button class="btn btn-primary shadow-sm mr-1 rounded-sm" type="submit">SAVE</button>
+                                            <button class="btn btn-warning shadow-sm ml-1 rounded-sm ms-3" type="reset">RESET</button>
                                         </div>
                                     </div>
                                 </form>
