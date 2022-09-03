@@ -74,7 +74,7 @@
                                 </div>
                                 <div v-else class="alert alert-danger border-0 shadow rounded-3">
                                     <div class="text-center">
-                                        <h5 class="fw-bold">Tidak ada data stok tersedia!</h5>
+                                        <h5 class="fw-bold">Stok aman, Bos. Produk masih ready.</h5>
                                     </div>
                                 </div>
                             </div>
