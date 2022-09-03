@@ -22,9 +22,9 @@
                                     <label class="form-label fw-bold">Qty</label>
                                     <input type="number" class="form-control text-center" v-model="qty" placeholder="Qty" min="1">
                                 </div>
-                                <div class="text-end">
-                                    <button @click.prevent="clearSearch" class="btn btn-warning btn-md border-0 shadow text-uppercase mt-3 me-2" :disabled="!product.id">CLEAR</button>
-                                    <button @click.prevent="addToCart" class="btn btn-success btn-md border-0 shadow text-uppercase mt-3" :disabled="!product.id">ADD ITEM</button>
+                                <div class="text-right">
+                                    <button @click.prevent="clearSearch" class="btn btn-warning btn-md mr-1 border-0 shadow text-uppercase mt-3 me-2" :disabled="!product.id">CLEAR</button>
+                                    <button @click.prevent="addToCart" class="btn btn-info btn-md ml-1 border-0 shadow text-uppercase mt-3" :disabled="!product.id">ADD ITEM</button>
                                 </div>
 
                             </div>
@@ -116,9 +116,9 @@
                                         <input type="number" v-model="cash" @keyup="setChange" class="form-control" placeholder="Pay (Rp.)">
                                     </div>
                                 </div>
-                                <div class="text-end mt-4">
+                                <div class="text-right mt-4">
                                     <button class="btn btn-warning btn-md border-0 shadow text-uppercase me-2">Cancel</button>
-                                    <button @click.prevent="storeTransaction" class="btn btn-purple btn-md border-0 shadow text-uppercase" :disabled="cash < grandTotal || grandTotal == 0">Pay Order & Print</button>
+                                    <button @click.prevent="storeTransaction" class="btn btn-info ml-2 btn-md border-0 shadow text-uppercase" :disabled="cash < grandTotal || grandTotal == 0">Pay Order & Print</button>
                                 </div>
                             </div>
                         </div>
