@@ -58,7 +58,7 @@
                     <div class="col-md-6 mt-4">
                         <div v-if="hasAnyPermission(['dashboard.product_stock'])" class="card border-0 rounded-3 shadow border-top-danger">
                             <div class="card-header">
-                                <span class="font-weight-bold"><i class="fa fa-box-open"></i> PRODUCT STOCK</span>
+                                <span class="font-weight-bold"><i class="fa fa-box-open"></i> STOK SISA KURANG DARI 10</span>
                             </div>
                             <div class="card-body">
                                 <div v-if="products_limit_stock.length > 0">
@@ -74,7 +74,7 @@
                                 </div>
                                 <div v-else class="alert alert-danger border-0 shadow rounded-3">
                                     <div class="text-center">
-                                        <h5 class="fw-bold">Stok aman, Bos. Produk masih ready.</h5>
+                                        <h5 class="fw-bold">Belum ada produk yang stoknya menipis, bos.</h5>
                                     </div>
                                 </div>
                             </div>
