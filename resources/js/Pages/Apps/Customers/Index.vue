@@ -27,7 +27,7 @@
                                             <th scope="col">Full Name</th>
                                             <th scope="col">No. Telp</th>
                                             <th scope="col">Address</th>
-                                            <th scope="col" style="width:20%">Actions</th>
+                                            <th scope="col" class="text-center"  style="width:30%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,8 +36,8 @@
                                             <td>{{ customer.no_telp }}</td>
                                             <td>{{ customer.address }}</td>
                                             <td class="text-center">
-                                                <Link :href="`/apps/customers/${customer.id}/edit`" v-if="hasAnyPermission(['customers.edit'])" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
-                                                <button @click.prevent="destroy(customer.id)" v-if="hasAnyPermission(['customers.delete'])" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> DELETE</button>
+                                                <Link :href="`/apps/customers/${customer.id}/edit`" v-if="hasAnyPermission(['customers.edit'])" class="btn btn-primary btn-sm mr-1 me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                                <button @click.prevent="destroy(customer.id)" v-if="hasAnyPermission(['customers.delete'])" class="btn btn-danger ml-1 btn-sm"><i class="fa fa-trash"></i> DELETE</button>
                                             </td>
                                         </tr>
                                     </tbody>

@@ -28,7 +28,7 @@
                                         <tr>
                                             <th scope="col">Role Name</th>
                                             <th scope="col" style="width:50%">Permissions</th>
-                                            <th scope="col" style="width:20%">Actions</th>
+                                            <th scope="col" class="text-center"  style="width:25%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -40,8 +40,8 @@
                                                 </span>
                                             </td>
                                             <td class="text-center">
-                                                <Link :href="`/apps/roles/${role.id}/edit`" v-if="hasAnyPermission(['roles.edit'])" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
-                                                <button @click.prevent="destroy(role.id)" v-if="hasAnyPermission(['roles.delete'])" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> DELETE</button>
+                                                <Link :href="`/apps/roles/${role.id}/edit`" v-if="hasAnyPermission(['roles.edit'])" class="btn btn-primary btn-sm mr-1me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                                <button @click.prevent="destroy(role.id)" v-if="hasAnyPermission(['roles.delete'])" class="btn btn-danger btn-sm ml-1"><i class="fa fa-trash"></i> DELETE</button>
                                             </td>
                                         </tr>
                                     </tbody>

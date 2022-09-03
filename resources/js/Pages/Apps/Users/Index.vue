@@ -33,7 +33,7 @@
                                             <th scope="col">Full Name</th>
                                             <th scope="col">Email Address</th>
                                             <th scope="col">Roles</th>
-                                            <th scope="col" width="20%">Actions</th>
+                                            <th scope="col" class="text-center"  width="20%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,12 +49,12 @@
                                             <td class="text-center">
                                                 <Link
                                                     :href="`/apps/users/${user.id}/edit`"
-                                                    v-if="hasAnyPermission(['users.edit'])" class="btn btn-primary btn-sm me-2">
+                                                    v-if="hasAnyPermission(['users.edit'])" class="btn btn-primary btn-sm me-2 mr-1">
                                                     <i class="fa fa-pencil-alt me-1"></i>EDIT
                                                 </Link>
                                                 <button
                                                     @click.prevent="destroy(user.id)"
-                                                    v-if="hasAnyPermission(['users.delete'])" class="btn btn-danger btn-sm">
+                                                    v-if="hasAnyPermission(['users.delete'])" class="btn btn-danger btn-sm ml-1">
                                                         <i class="fa fa-trash me-1"></i>DELETE
                                                 </button>
                                             </td>

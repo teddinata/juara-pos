@@ -24,18 +24,18 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Image</th>
-                                            <th scope="col" style="width:20%">Actions</th>
+                                            <th scope="col" >Name</th>
+                                            <th scope="col" class="text-center" >Image</th>
+                                            <th scope="col" class="text-center" style="width:30%;">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr v-for="(category, index) in categories.data" :key="index">
-                                            <td>{{ category.name }}</td>
+                                            <td >{{ category.name }}</td>
                                             <td class="text-center"><img :src="category.image" width="40"></td>
                                             <td class="text-center">
-                                                <Link :href="`/apps/categories/${category.id}/edit`" v-if="hasAnyPermission(['categories.edit'])" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
-                                                <button @click.prevent="destroy(category.id)" v-if="hasAnyPermission(['categories.delete'])" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> DELETE</button>
+                                                <Link :href="`/apps/categories/${category.id}/edit`" v-if="hasAnyPermission(['categories.edit'])" class="btn btn-primary btn-sm mr-1 me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                                <button @click.prevent="destroy(category.id)" v-if="hasAnyPermission(['categories.delete'])" class="btn btn-danger btn-sm ml-1"><i class="fa fa-trash"></i> DELETE</button>
                                             </td>
                                         </tr>
                                     </tbody>

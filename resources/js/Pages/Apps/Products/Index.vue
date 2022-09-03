@@ -29,7 +29,7 @@
                                             <th scope="col">Buy Price</th>
                                             <th scope="col">Sell Price</th>
                                             <th scope="col">Stock</th>
-                                            <th scope="col" style="width:20%">Actions</th>
+                                            <th scope="col" class="text-center"  style="width:30%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,8 +48,8 @@
                                             <td>Rp. {{ formatPrice(product.sell_price) }}</td>
                                             <td>{{ product.stock }}</td>
                                             <td class="text-center">
-                                                <Link :href="`/apps/products/${product.id}/edit`" v-if="hasAnyPermission(['products.edit'])" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
-                                                <button @click.prevent="destroy(product.id)" v-if="hasAnyPermission(['products.delete'])" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> DELETE</button>
+                                                <Link :href="`/apps/products/${product.id}/edit`" v-if="hasAnyPermission(['products.edit'])" class="btn btn-primary btn-sm mr-1 me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                                <button @click.prevent="destroy(product.id)" v-if="hasAnyPermission(['products.delete'])" class="btn btn-danger btn-sm ml-1"><i class="fa fa-trash"></i> DELETE</button>
                                             </td>
                                         </tr>
                                     </tbody>
